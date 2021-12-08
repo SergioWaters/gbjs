@@ -1,0 +1,46 @@
+'use strict'
+const quiz = {
+questions: [
+[0, 2, 1, 3, 4, 2, 3, 4, 1, 3, 2, 3, 4, 1, 4, 3, 2, 3, 1, 4, 3,],
+'rose, oak, tulip, daffodil',
+'bright, yellow, orange, green',
+'plum, apple, onion, pear',
+'cat, dog, horse, pigeon',
+'sofa, coat, table, chair',
+'grape, carrot, leek, lettuce',
+'seven, thirty, eighteen, once',
+'Belgian, Denmark, Brazil, Japan',
+'cap, helmet, belt, hat',
+'brother, niece, grandfather, uncle',
+'car, bus, ship, van',
+'cheese, bread, sausages, coffee',
+'painting, rugby, skiing, tennis',
+'milk, water, tea, petrol',
+'spoon, knife, cup, fork',
+'fly, mouse, spider, ant',
+'bed, pillow, washing machine, mattress',
+'Amanda, Peter, Michael, David',
+'garden, hall, lawn, fence',
+'post office, library, park, hotel',
+],
+score: $score,
+begin = function ($answer, $score) {
+for (let i = 1; i < this.questions.length; i++) { let $answer=parseInt(prompt(`<choose with number from 1 to 4, what's
+  excess, or type 0 to quit> : < ${this.questions[i]}>`));
+    if ($answer == 0 || $answer == undefined) {
+    console.log(`your score is ${$score}`);
+    console.log('Bye! You can start over any time..');
+    return
+    } else if (!this.questions[0].includes($answer)) {
+    alert('you can only use <1, 2, 3, 4> keys to choose an answer');
+      continue
+      } else if ($answer == this.questions[0][i]) {
+      console.log('your score is ' + ($score += 1));
+      console.log("right! you're one point ahead!");
+      } else {
+      console.log('wrong! your score still:' + $score);
+      }
+      }
+      }
+      };
+      quiz.begin()
