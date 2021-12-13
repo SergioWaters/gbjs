@@ -226,24 +226,35 @@
         'garden, hall, lawn, fence',
         'post office, library, park, hotel',
       ],
+
       begin: function () {
         let $currentUser = prompt('Hello, player! Name yourself');
         let $score = null;
         for (let i = 1; i < this.questions.length; i++) {
-          let answer = prompt(`<choose with number from 1 to 4, what's excess, or type 0 to quit> : <  ${this.questions[i]}  >`);
+
+          let answer = +prompt(`<  ${this.questions[i]}  > \n < choose with number from 1 to 4, what's excess > \n < type '0' or click 'Cancel' to quit > `);
+
           if (answer == this.questions[0][i]) {
-            console.log('your score is ' + ($score++));
-            console.log(`Congratulations, ${$currentUser}! you're one point ahead!`);
+            $score++
+            console.log(` Congratulations, ${$currentUser}! \n you're one point ahead!your score is:  ` + ($score));
+            alert(` Congratulations, ${$currentUser}! \n you're one point ahead!your score is:  ` + ($score));
             this[$currentUser] = $score;
+
           } else if (answer == 0 || answer == null) {
-            console.log(`your score is ${$score}`);
-            console.log(`Bye ${$currentUser}! You can start over any time..`);
+
+            console.log(` Bye ${$currentUser}!\n your score is ${$score} \n You can start over any time..`);
+            alert(` Bye ${$currentUser}!\n your score is ${$score} \n You can start over any time..`);
             return
-          } else if (!+this.questions[0].includes(+this.answer)) {
-            alert('You can only use <1, 2, 3, 4> keys to choose an answer. Use <0> if you want to quit');
+
+          } else if (!+this.questions[0].includes(answer)) {
+
+            console.log('You can only use <1, 2, 3, 4> keys to choose an answer. \n Use <0> or <Cancel> if you want to quit');
+            alert('You can only use <1, 2, 3, 4> keys to choose an answer. \n Use <0> or <Cancel> if you want to quit');
             i--
+
           } else {
-            console.log('wrong! your score still:' + $score);
+            console.log(`wrong! your score still is: ${$score}`);
+            alert(`wrong! your score still is:   ${$score}`);
           }
         }
       }
