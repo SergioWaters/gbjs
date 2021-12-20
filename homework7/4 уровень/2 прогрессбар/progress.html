@@ -17,6 +17,9 @@
     -->
 
     <script>
+
+        'use strict'
+
         let div = document.querySelector('div');
         let percent;
         /**
@@ -31,7 +34,7 @@
                 console.log(percent + '%');
 
 
-            }, 1000 * percent)
+            }, 500 * percent)
         };
 
         for (let i = 0; i <= 100; i++) {
